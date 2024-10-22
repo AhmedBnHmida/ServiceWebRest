@@ -129,7 +129,7 @@ public class RendezVousRessources {
         return Response.status(Response.Status.NOT_FOUND).build();
     }
     @DELETE
-    @Produces("application/xml")
+    @Produces("text/plain")
     @Path("/{reference}")
     public Response deleteRendezVous(@PathParam(value = "reference") int reference) {
         if (logb.deleteRendezVous(reference)) {
