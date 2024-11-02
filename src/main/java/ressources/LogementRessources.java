@@ -88,8 +88,8 @@ public Response ajouterLogement(Logement l){
             list = logb.getLogementsListeByref(Integer.parseInt(reference));
         }
         if (list.size()!=0)
-            return Response.status(Response.Status.CREATED).entity(list).build();
-        return Response.status(Response.Status.NOT_FOUND).build();
+            return Response.status(Status.CREATED).entity(list).build();
+        return Response.status(Status.NOT_FOUND).build();
     }
 
     @DELETE
@@ -97,9 +97,9 @@ public Response ajouterLogement(Logement l){
     @Path("/{reference}")
     public Response deleteLogement(@PathParam(value = "reference") int reference) {
         if (logb.deleteLogement(reference)) {
-            return Response.status(Response.Status.OK).entity("seccess").build();
+            return Response.status(Status.OK).entity("seccess").build();
         }else {
-            return Response.status(Response.Status.NOT_FOUND).entity("echec").build();
+            return Response.status(Status.NOT_FOUND).entity("echec").build();
         }
     }
 
